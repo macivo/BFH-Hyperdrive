@@ -1,0 +1,26 @@
+.mainLogo{
+    display: block;
+    font-family: 'Colonna MT', sans-serif;
+    color: black;
+    padding: 3vh 0 0vh 0;
+    line-height: 9vh;
+    font-size: 9vmin;
+    text-align: center;
+    -webkit-animation: glow 5s ease-in-out infinite alternate;
+    -moz-animation: glow 5s ease-in-out infinite alternate;
+    animation: glow 5s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #1464F4, 0 0 4px #1464F4, 0 0 5px #1464F4, 0 0 6px #1464F4, 0 0 7px #1464F4
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff, 0 0 80px #fff
+    }
+}
+.bfhLogo {
+    position: absolute;
+    max-height: 5vh;
+    top: 1%;
+    left: 2px;
+}

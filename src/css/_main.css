@@ -1,0 +1,50 @@
+@import "logos.css";
+@import "navi.css";
+@import "board.css";
+@import "setting.css";
+@import "digital-twin.css";
+/** reset css for all browser */
+body, div, span, applet, object, iframe, h1, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0;    padding: 0;    border: 0;    font: inherit;    vertical-align: baseline; }
+
+html, body
+{
+    width: 100%;
+    height: 100%;
+    font-family: Calibri, serif;
+    text-align: center;
+    vertical-align: baseline;
+}
+header {
+    min-height: 12vh;
+    background-color: #F0F0F0;
+}
+nav {
+    min-height: 2vh;
+    border: #F0F0F0 solid 2px;
+}
+main {
+    min-height: 84vh;
+}
+footer {
+    min-height: 1vh;
+}
+.errorText {
+    width: 100%;
+    font-size: large;
+    color: red;
+    border: red dashed 1px;
+    position: fixed;
+}
+.notification {
+    width: 100%;
+    font-size: large;
+    color: green;
+    border: green dashed 1px;
+    position: fixed;
+}
+.footer{
+    background-color: #F0F0F0;
+    width: 100%;
+    text-align: center;
+    font-size: xx-small;
+}

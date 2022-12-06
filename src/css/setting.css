@@ -1,0 +1,56 @@
+.settingWrapper {
+    padding-top: 2vh;
+    display: inline-grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+.settingOption {
+    width: 99%;
+    position: relative;
+    text-align: center;
+    background-color: #F0F0F0;
+    padding: 1em;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+}
+.settingOption p {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-bottom: 1em;
+}
+.settingOption form{
+    text-align: left;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+.settingOption div{
+    margin-top: 3em;
+}
+.settingOption label{
+}
+.settingOption form input{
+    width: 90%;
+    margin-bottom: 0.5em;
+}
+.settingOption button {
+    align-self: center;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    border-style: solid;
+    box-shadow: black 15px 28px 25px -18px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.2em 1.5em;
+    transition: all 222ms ease-in-out;
+    user-select: none;
+    border-radius: 5px;
+    border-color: #1464F4;
+}
+.settingOption button:hover {
+    box-shadow: #1464F4 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+}
+
+.settingOption button:focus {
+    box-shadow: #1464F4 2px 8px 4px -6px;
+}

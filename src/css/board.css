@@ -1,0 +1,149 @@
+.editorBoard {
+    display: inline-grid;
+/*    margin-top: -1px;
+    margin-left: -1px;*/
+}
+.trackPiece {
+    outline: 1px dashed;
+    /*margin-top: -1px;*/
+    /*margin-left: -1px;*/
+    background-color: white;
+    aspect-ratio: 420 / 297;
+    position: relative;
+}
+.trackPiece:hover > button {
+    visibility: visible;
+}
+.trackPiece > svg{
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.trackPiece button{
+    width: 2em;
+    height: 2em;
+    border: none;
+    visibility: hidden;
+    background-color: transparent;
+    position: sticky;
+}
+.deleteButton{
+    float: right;
+}
+.rotationButton{
+    background-image:url("../icons/rotation.png");
+    background-size: 100% auto;
+    float: left;
+}
+.trackPiece.over {
+    border: 1px dotted #1464F4;
+}
+#editor{
+    height: 59vh;
+    width: 100%;
+    padding-top: 2.5vh;
+}
+.editorTools{
+    display: inline-flex;
+    padding-top: 2vh;
+}
+.editorTools .tool{
+    display: flex;
+}
+
+.editorTools .tool img{
+    display: inline-flex;
+    margin-right: 2vh;
+    width: 15vh;
+    height: 15vh;
+    border: 5px solid white;
+}
+.editorTools .tool img:hover + div{
+    visibility: visible;
+    transition-delay: 0s;
+}
+.dropUp-content {
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    bottom: 22vh;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 10px 18px 0px rgba(0,0,0,0.2);
+    transition-property: visibility;
+    transition-delay: 1s;
+    justify-content: center;
+    background-color: white;
+}
+.dropUp-content:hover{
+    visibility: visible;
+    transition-delay: 0s;
+}
+.editorTools .tool .dropUp-content img{
+    width: 12.6vh;
+    height: 8.91vh;
+    border: 3px groove white;
+    margin: 0 1vw;
+/*    -webkit-user-drag: none; */
+}
+.editorTools .tool .dropUp-content img:hover{
+    border: 3px solid black;
+}
+
+
+/*.editorTools div div{*/
+/*    display: grid;*/
+/*}*/
+.editorTools div div form {
+    display: grid;
+}
+.editorTools div div form label {
+    width: 7vh;
+    font-size: large;
+}
+.editorTools div div form input {
+    width: 7vh;
+    font-size: medium;
+}
+.editorTools div div button {
+    width: 4.5vh;
+    height: 4.5vh;
+    justify-self: end;
+    margin-top: 1vh;
+    font-weight: bolder;
+    color: #1464F4;
+}
+#editorFunction {
+    height: 20.5vh;
+    background-color: #F0F0F0;
+    overflow: scroll;
+    white-space: nowrap;
+}
+/* Solid border */
+hr.solid {
+    border-top: 1px solid #F0F0F0;
+    color: white;
+}
+[draggable] {
+    user-select: none;
+}
+
+.fade-in {
+    animation: 3s fadeIn;
+}
+
+.fade-out {
+    animation: 1.5s fadeOut;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1;}
+    to { opacity: 0; }
+}

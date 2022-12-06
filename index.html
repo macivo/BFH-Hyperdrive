@@ -1,0 +1,173 @@
+<!--
+ *  BFH Hyper drive -- Track Editor
+ *  Bachelor thesis (BTI3051) 22, Bern University of Applied Sciences
+ *  Developer: Mac Müller
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>BFH HyperDrive</title>
+    <link rel="stylesheet" href="src/css/_main.css">
+    <!-- Source: https://www.eclipse.org/paho/files/jsdoc/Paho.MQTT.html -->
+    <script src="src/lib/mqttws31.min.js"></script>
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+<header>
+    <img class="bfhLogo" src="src/icons/BFH.png" alt="BFH_Logo" draggable="false" ondragstart="return false;">
+    <span class="mainLogo">BFH HYPER DRIVE</span>
+</header>
+<nav>
+    <span>Track Editor</span>
+    <label class="switch">
+        <input type="checkbox" class="naviClick" isChecked="false" autocomplete="off">
+        <span class="slider round"></span>
+    </label>
+    <span>Digital Twin</span>
+    <div class="setting" isClicked="false">
+        <span>Setting</span>
+        <img src="src/icons/setting.svg" alt="Setting logo">
+    </div>
+</nav>
+<main>
+    <!-- space for adding a view from router.js -->
+</main>
+<footer class="footer">
+    <p>&copy;BFH Hyper drive: Track Editor Portable Version - Mac Müller</p>
+</footer>
+</body>
+
+<!-- Templates -->
+<!-- Template /home -->
+<template id="tpl-home">
+    <div id="editor">
+    </div>
+    <hr class="solid">
+    <div id="editorFunction">
+    </div>
+</template>
+
+<!-- Template /digital-twin -->
+<template id="tpl-digital-twin">
+    <div id="digital-twin">
+    </div>
+    <hr class="solid">
+    <div id="controller">
+    </div>
+</template>
+
+<!-- Template /setting -->
+<template id="tpl-setting">
+    <div class="settingWrapper">
+        <div class="settingOption">
+            <p>Track setting</p>
+            <form>
+                <label for="lanes">Lanes: </label>
+                <br>
+                <input type="number" id="lanes" name="editorColumn">
+            </form>
+            <button id="trackSetting">Save</button>
+        </div>
+        <div class="settingOption">
+            <p>Editor setting</p>
+            <form>
+                <label for="editorColumn">Column: </label>
+                <br>
+                <input type="number" id="editorColumn" name="editorColumn">
+                <br>
+                <label for="editorRow">Row: </label>
+                <br>
+                <input type="number" id="editorRow" name="editorRow">
+                <br>
+            </form>
+            <button id="boardSetting">Save</button>
+            <br>
+            <p style="font-size: small; font-weight: normal">Editor will be reset, all your works will be lost!</p>
+        </div>
+        <div class="settingOption">
+            <p>Import</p>
+            <br>
+            <input id="fileImport" name="fileImport" type="file" size="50" accept=".svg" multiple>
+            <button id="import">Import</button>
+            <div>
+                <p>Export</p>
+                <label>Track</label>
+                <br>
+                <label>SVG format</label>
+                <br>
+                <button id="exportTrack">Export track</button>
+                <br>
+                <br>
+                <label>Track pieces</label>
+                <br>
+                <label>SVG format</label>
+                <br>
+                <button id="saveTrackPieces">Export track pieces</button>
+            </div>
+            <br>
+        </div>
+        <div class="settingOption">
+            <p>Connection status</p>
+            <form>
+                <label>MQTT client: </label>
+                <label class="mqttStatus">-</label>
+            </form>
+            <form>
+                <label>Host(Anki) : </label>
+                <label class="hostStatus">-</label>
+            </form>
+            <form>
+                <label>Cars: </label>
+                <label class="carsStatus">-</label>
+            </form>
+            <button id="refreshStatus">Refresh</button>
+        </div>
+        <div class="settingOption">
+            <p>MQTT Client setting</p>
+            <form>
+                <label for="MQTTHost">MQTT host: </label>
+                <input type="text" id="MQTTHost" name="MQTTHost">
+                <br>
+                <label for="MQTTPort">MQTT port: </label>
+                <input type="number" id="MQTTPort" name="MQTTPort">
+                <br>
+                <label for="MQTTBasePath">MQTT base path: </label>
+                <input type="text" id="MQTTBasePath" name="MQTTBasePath">
+                <br>
+                <label for="MQTTUsername">MQTT username:</label>
+                <input type="text" id="MQTTUsername" name="MQTTUsername">
+                <br>
+                <label for="MQTTPassword">MQTT password:</label>
+                <input type="password" id="MQTTPassword" name="MQTTPassword">
+                <br>
+            </form>
+            <button id="MQTTSave" >Save</button>
+        </div>
+        <div class="settingOption">
+            <p>MQTT bridge command</p>
+            <form>
+                <label for="MQTTBridgeHost">MQTT host: </label>
+                <input type="text" id="MQTTBridgeHost" name="MQTTHost">
+                <br>
+                <label for="MQTTBridgePort">MQTT port: </label>
+                <input type="number" id="MQTTBridgePort" name="MQTTPort">
+                <br>
+                <label for="MQTTBridgeUsername">MQTT username:</label>
+                <input type="text" id="MQTTBridgeUsername" name="MQTTUsername">
+                <br>
+                <label for="MQTTBridgePassword">MQTT password:</label>
+                <input type="password" id="MQTTBridgePassword" name="MQTTPassword">
+                <br>
+            </form>
+            <button id="MQTTBridge">SET to MQTT bridge</button>
+            <div>
+                <button id="shareTrack">Share track</button>
+                <button id="getShareTrack">Get shared track</button>
+                <p style="font-size: small; font-weight: normal">Please wait 3 seconds after click!</p>
+            </div>
+        </div>
+    </div>
+</template>
+</html>
