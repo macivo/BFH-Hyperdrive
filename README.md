@@ -1,10 +1,8 @@
 # ![](https://www.bfh.ch/dam/jcr:36ac8a9a-6176-44fe-8e69-064cffb38e5b/logo_l-xs-home-und-footer_de.svg) Bern University of Applied Sciences
-### BTI3051 Bachelorthesis FS2022
-### Standalone Track Editor and Observer for Anki Overdrive
-### BFH Hyperdrive
-### Group 20: Mac Müller
-### Advisor: Prof. Dr. Reto König
-### Expert: Thomas Jäggi
+#### BTI3051 Bachelorthesis FS2022 : Standalone Track Editor and Observer for Anki Overdrive - BFH Hyperdrive
+#### Student: Mac Müller
+#### Advisor: Prof. Dr. Reto König
+#### Expert: Thomas Jäggi
 
 ------------
 #### ![](http://twemoji.maxcdn.com/36x36/1f4e3.png) Introduction
