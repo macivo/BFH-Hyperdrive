@@ -120,4 +120,4 @@ Please reinstall the module @abandonware/noble in car controller directory with:
 | Anki/Car/`name of car`/E/speed| to subscribe cars speed.|
 | Anki/Car/`name of car`/I| Request car to changed lane or speed.|
 
-*** car controller was developed by Dominique Hofmann https://github.com/hofdo/nodejsankisdk. I did some edit for MQTT-Bridge-Function and static http-Server.
+*** car controller was developed by Dominique Hofmann https://github.com/hofdo/nodejsankisdk. I made some changes to test the MQTT bridge feature and set up a static http server.
