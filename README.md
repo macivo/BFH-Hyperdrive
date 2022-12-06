@@ -1,10 +1,8 @@
 # ![](https://www.bfh.ch/dam/jcr:36ac8a9a-6176-44fe-8e69-064cffb38e5b/logo_l-xs-home-und-footer_de.svg) Bern University of Applied Sciences
-### BTI3051 Bachelorthesis FS2022
-### Standalone Track Editor and Observer for Anki Overdrive
-### BFH Hyperdrive
-### Group 20: Mac Müller
-### Advisor: Prof. Dr. Reto König
-### Expert: Thomas Jäggi
+#### BTI3051 Bachelorthesis FS2022 : Standalone Track Editor and Observer for Anki Overdrive - BFH Hyperdrive
+#### Student: Mac Müller
+#### Advisor: Prof. Dr. Reto König
+#### Expert: Thomas Jäggi
 
 ------------
 #### ![](http://twemoji.maxcdn.com/36x36/1f4e3.png) Introduction
@@ -122,4 +120,4 @@ Please reinstall the module @abandonware/noble in car controller directory with:
 | Anki/Car/`name of car`/E/speed| to subscribe cars speed.|
 | Anki/Car/`name of car`/I| Request car to changed lane or speed.|
 
-*** car controller was developed by Dominique Hofmann https://github.com/hofdo/nodejsankisdk. I did some edit for MQTT-Bridge-Function and static http-Server.
+*** car controller was developed by Dominique Hofmann https://github.com/hofdo/nodejsankisdk. I made some changes to test the MQTT bridge feature and set up a static http server.
