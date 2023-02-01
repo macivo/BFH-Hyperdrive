@@ -6,22 +6,22 @@
 
 ------------
 #### ![](http://twemoji.maxcdn.com/36x36/1f4e3.png) Introduction
-This bachelor thesis at the Bern University of Applied Sciences aims to develop a standalone system "BFH Hyperdrive". It is a standalone system to observe the original car racing game "Anki Overdrive". It is ideally suited as a base system for application areas in research such as traffic simulations or process control. 
+This bachelor thesis at the Bern University of Applied Sciences aims to develop a standalone system "BFH Hyperdrive". It is a standalone system to observe the original car racing game "Anki Overdrive". It is ideally suited as a base system for application areas in researches such as traffic simulations or process control. 
 
-**BFH Hyperdrive is:**
-- A standalone system, which is ready immediately after starting the computer.
+**BFH Hyperdrive:**
+- A standalone system, which is immediately ready after starting the computer.
 - The Track Editor can generate the track images with the SVG format.
 - In difference to PNG, the SVG file size has become up to 40 times smaller.
-- The quality of the printed tracks is excellent.
+- The quality of the printed SVG tracks is excellent.
 - The animation of the digital twin has become smoother and more accurate.
 - Optionally, it can work collaboratively in the network with other "BFH Hyperdrive".
 
 #### ![](http://twemoji.maxcdn.com/36x36/1f4e3.png) Application starting guide
 1. Connect the computer to the power supply.
-2. Supply power to the station of the vehicles (plug in the power adapter/USB port on the computer).
+2. Supply the power to the station of the vehicles (plug in the power adapter/USB port on the computer).
 3. Run a web browser and call the main page (index.html)  `localhost`
 
-Alternatively: connect the computer with an Ethernet cable and call the main page (index.html) `http://192.168.5.5`. There are only static IP addresses on the computer, and no DHCP server. Please make sure that you are in the same network /24.
+Alternatively: connect the computer with an Ethernet cable and call the main page (index.html) `http://192.168.5.5`. There are only static IP addresses on the computer, and no DHCP server. Make sure that all devices are on the same network /24.
 
 #### ![](http://twemoji.maxcdn.com/36x36/1f4e3.png) Application Digital Twin guide
 1. Minimum speed should be 300 (mm/s).
@@ -30,14 +30,14 @@ Alternatively: connect the computer with an Ethernet cable and call the main pag
 The system can be built as a new BFH Hyperdrive using the following instructions:
 
 Computer Requirements:
-- Linux operating system
+- Linux debian operating system
 - Eclipse Mosquitto MQTT broker
 - Node.Js 10.13.x or higher
 - Chromium Browser 98.0 or higher
 
-A static IP address for the Ethernet interface should be set on the computer. e.g.192.168.5.5/24.
+A static IP address for the Ethernet interface could be set on the computer. e.g.192.168.5.5/24.
 
-Download the code of BFH Hyperdrive from the this Gitlab repository. The file "car_controller.zip" must be unzipped.
+Download the code of BFH Hyperdrive from the this Gitlab repository and upzip the file "car_controller.zip".
 
 The MQTT broker is to be configured as follows. The configuration file is located on the `/etc/mosquitto/mosquitto.conf` directory.
 ```
@@ -53,7 +53,7 @@ allow_anonymous true
 ######################
 ##### Bridge Config #####
 ```
-To set the car controller as a system service, the following text file should be created in the folder `/etc/systemd/system/anki_car_controller.service`. the ExecStart is the directory of the Node.js and the file of car controller.
+To set the car controller as a system service, the following text file should be created in the folder `/etc/systemd/system/anki_car_controller.service`. 
 ```
 [Unit]
 Description=Anki Overdrive Car Controller
@@ -71,6 +71,8 @@ KillMode=process
 [Install]
 WantedBy=multi-user.target
 ```
+Note: the ExecStart is the directory of the Node.js and the file of car controller.
+
 Activate and start the following services with the following commands:
 - `sudo systemctl enable mosquitto.service`
 - `sudo systemctl enable anki_car_controller.service`
@@ -80,19 +82,19 @@ Activate and start the following services with the following commands:
 The front-end-Application can now be accessed directly via the system's browser or via the IP address in the LAN, e.g. http://192.168.5.5:9001.
 
 ##### ![](http://twemoji.maxcdn.com/36x36/1f6a7.png) Remarks update:
-[1] Many browsers report security issues, that the front-end-Application is not from a real http-server. 
+[1] Many browsers report security issues, that the front-end-Application is not running on a http-server. 
 
-In this case, the frontend might not load properly. With some browsers can user ignore this security issue, some not.
+In this case, the frontend might not load properly. Only few browsers allow the user to ignore this security.
 
 Therefore I decided that the car controller should take an alternative http-server port 80 role.
 
-Simply edit the `host.js` file in `car_controller` with the path of the front-end-Application as example as follows:
+Simply by edited the `host.js` file in `car_controller` with the path of the front-end-Application as example as follows:
 ```
-const frontEndDirectory = ("/home/pi/Desktop/Frontend");  //At Line Number 11 with the path of frontend
+const frontEndDirectory = ("/home/pi/Desktop/Frontend");  //At Line Number 11 with the path to frontend
 ```
 The front-end-Application can now be accessed directly via the system's browser or via the IP address in the LAN, e.g. http://192.168.5.5
 
-[2] If this problem exit.
+[2] If this problem occurs.
 ````
 Error: The module '/home/pi/Desktop/nodejsankisdk/node_modules/@abandonware/bluetooth-hci-socket/lib/binding/bluetooth_hci_socket.node'
 was compiled against a different Node.js version using
@@ -120,4 +122,4 @@ Please reinstall the module @abandonware/noble in car controller directory with:
 | Anki/Car/`name of car`/E/speed| to subscribe cars speed.|
 | Anki/Car/`name of car`/I| Request car to changed lane or speed.|
 
-*** car controller was developed by Dominique Hofmann https://github.com/hofdo/nodejsankisdk. I made some changes to test the MQTT bridge feature and set up a static http server.
+*** The car controller was developed by Dominique Hofmann https://github.com/hofdo/nodejsankisdk. I made some changes to test the MQTT bridge feature and set up a static http server.
