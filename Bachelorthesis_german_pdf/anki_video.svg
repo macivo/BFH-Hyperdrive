@@ -1,0 +1,7 @@
+<svg height="315" version="1.1" width="560" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject x="10" y="10" height="315" width="560">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/nxjgvsdgggk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        </div>
+    </foreignObject>
+</svg>
